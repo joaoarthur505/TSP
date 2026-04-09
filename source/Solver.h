@@ -1,18 +1,10 @@
 #pragma once
 
-#include "Solution.h"
+#include "AbstractSolver.h"
 
-class Data;
-
-class Solver
+class Solver : public AbstractSolver
 {
 public:
-	Solver();
 
-	virtual bool solve() = 0;
-
-protected:
-	const Data& data;
-
-	Solution solution;
+	bool solve() override;
 };

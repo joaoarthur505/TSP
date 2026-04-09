@@ -21,20 +21,26 @@
   <ItemGroup>
     <ClInclude Include="source\Data.h" />
     <ClInclude Include="source\Loader.h" />
+    <ClInclude Include="source\NearestNeighborSolver.h" />
     <ClInclude Include="source\Point.h" />
     <ClInclude Include="source\Random.h" />
     <ClInclude Include="source\RandomSolver.h" />
     <ClInclude Include="source\Singleton.h" />
     <ClInclude Include="source\Solution.h" />
+    <ClInclude Include="source\AbstractSolver.h" />
     <ClInclude Include="source\Solver.h" />
+    <ClInclude Include="source\Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Loader.cpp" />
     <ClCompile Include="source\Main.cpp" />
+    <ClCompile Include="source\NearestNeighborSolver.cpp" />
     <ClCompile Include="source\Random.cpp" />
     <ClCompile Include="source\RandomSolver.cpp" />
     <ClCompile Include="source\Solution.cpp" />
+    <ClCompile Include="source\AbstractSolver.cpp" />
     <ClCompile Include="source\Solver.cpp" />
+    <ClCompile Include="source\Timer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>

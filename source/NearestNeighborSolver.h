@@ -2,8 +2,9 @@
 
 #include "AbstractSolver.h"
 
-class RandomSolver : public AbstractSolver
+class NearestNeighborSolver : public AbstractSolver
 {
 public:
+
 	bool solve() override;
 };
