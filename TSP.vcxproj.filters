@@ -22,6 +22,21 @@
     <Filter Include="Header Files\util">
       <UniqueIdentifier>{c8aedba6-1829-4a17-908f-47c7957eeeee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\output">
+      <UniqueIdentifier>{a3003798-d195-43ed-9f50-ffa2a07e5dbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\algorithm">
+      <UniqueIdentifier>{a8b6f9b4-ce2b-423e-af17-03e66cad8b1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\algorithm">
+      <UniqueIdentifier>{8f70b565-fb21-441a-b3c6-f871b1c7680d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\output">
+      <UniqueIdentifier>{c7cb06f5-c9f1-4f67-86be-b0ab56af2ca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\util">
+      <UniqueIdentifier>{a41d9d39-536e-4c7e-92dd-06ab3dad5898}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Data.h">
@@ -36,6 +51,18 @@
     <ClInclude Include="source\Point.h">
       <Filter>Header Files\util</Filter>
     </ClInclude>
+    <ClInclude Include="source\Solution.h">
+      <Filter>Header Files\output</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Solver.h">
+      <Filter>Header Files\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="source\RandomSolver.h">
+      <Filter>Header Files\algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Random.h">
+      <Filter>Header Files\util</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Main.cpp">
@@ -43,6 +70,18 @@
     </ClCompile>
     <ClCompile Include="source\Loader.cpp">
       <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Solver.cpp">
+      <Filter>Source Files\output</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RandomSolver.cpp">
+      <Filter>Source Files\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Solution.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Random.cpp">
+      <Filter>Source Files\util</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
