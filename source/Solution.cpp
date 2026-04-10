@@ -4,7 +4,7 @@
 
 void Solution::evaluate()
 {
-	const Data& data = Data::getBuilt();
+	const Data& data = Data::getInstance();
 
 	cost = 0;
 	for (size_t i = 0; i < nodes.size() - 1; i++)

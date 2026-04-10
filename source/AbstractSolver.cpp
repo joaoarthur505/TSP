@@ -2,4 +2,4 @@
 
 #include "Data.h"
 
-AbstractSolver::AbstractSolver() : data(Data::getBuilt()) {}
+AbstractSolver::AbstractSolver() : data(Data::getInstance()) {}

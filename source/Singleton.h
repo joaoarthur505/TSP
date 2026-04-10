@@ -4,29 +4,16 @@ template<typename T>
 class Singleton
 {
 public:
-    virtual ~Singleton() {}
-
-    static T &getInstance()
+    static T& getInstance()
     {
-        if (singleton == nullptr)
-            singleton = new T();
-        return *singleton;
-    }
-
-    static T &getBuilt()
-    {
-        return *singleton;
-    }
-
-    void destroy()
-    {
-        delete singleton;
+        static T instance;
+        return instance;
     }
 
 protected:
-    Singleton() {}
-    static T *singleton;
+    Singleton() = default;
+    ~Singleton() = default;
+    
+    Singleton(const Singleton&) = delete;
+    Singleton& operator=(const Singleton&) = delete;
 };
-
-template<typename T>
-T *Singleton<T>::singleton = nullptr;

@@ -9,7 +9,6 @@
 
 class Data : public Singleton<Data>
 {
-	friend class Singleton<Data>;
 public:
 	std::string name;
 	std::string type;
