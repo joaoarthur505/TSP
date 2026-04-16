@@ -37,6 +37,12 @@
     <Filter Include="Source Files\util">
       <UniqueIdentifier>{a41d9d39-536e-4c7e-92dd-06ab3dad5898}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\algorithm\local-search">
+      <UniqueIdentifier>{522db2b3-5fcf-4316-a13f-6691896b3852}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\algorithm\local-search">
+      <UniqueIdentifier>{9d37d6e8-159e-4046-a09f-76da4e9fd48a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Data.h">
@@ -75,6 +81,18 @@
     <ClInclude Include="source\GraspSolver.h">
       <Filter>Header Files\algorithm</Filter>
     </ClInclude>
+    <ClInclude Include="source\Neighborhood.h">
+      <Filter>Header Files\algorithm\local-search</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Shift.h">
+      <Filter>Header Files\algorithm\local-search</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Swap.h">
+      <Filter>Header Files\algorithm\local-search</Filter>
+    </ClInclude>
+    <ClInclude Include="source\VNDSolver.h">
+      <Filter>Header Files\algorithm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Main.cpp">
@@ -105,6 +123,18 @@
       <Filter>Source Files\algorithm</Filter>
     </ClCompile>
     <ClCompile Include="source\GraspSolver.cpp">
+      <Filter>Source Files\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Shift.cpp">
+      <Filter>Source Files\algorithm\local-search</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Neighborhood.cpp">
+      <Filter>Source Files\algorithm\local-search</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Swap.cpp">
+      <Filter>Source Files\algorithm\local-search</Filter>
+    </ClCompile>
+    <ClCompile Include="source\VNDSolver.cpp">
       <Filter>Source Files\algorithm</Filter>
     </ClCompile>
   </ItemGroup>

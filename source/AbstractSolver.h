@@ -14,12 +14,13 @@ public:
 		Random,
 		NearestNeighbor,
 		GRASP,
+		VariableNeighborhoodDecent,
 	};
 
 	virtual bool solve() = 0;
 
+	Solution solution;
+
 protected:
 	const Data& data;
-
-	Solution solution;
 };
