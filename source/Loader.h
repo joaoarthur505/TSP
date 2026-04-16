@@ -18,4 +18,5 @@ private:
 
 	void readCoords();
 	void buildEdges();
+	void readBKS();
 };

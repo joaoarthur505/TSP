@@ -29,7 +29,7 @@ bool NearestNeighborSolver::solve()
 	solution.nodes.push_back(0);
 	solution.evaluate();
 
-	cout << "NearestNeighborSolver: " << solution.cost << endl;
+	cout << "NearestNeighborSolver: " << solution << endl;
 
     return true;
 }

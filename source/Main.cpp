@@ -2,6 +2,7 @@
 #include <format>
 
 #include "Loader.h"
+#include "Data.h"
 
 #include "Solver.h"
 
@@ -13,6 +14,9 @@ int main()
 {
 	Loader loader;
 	loader.load("data/ulysses16.tsp");
+
+	const Data& data = Data::getInstance();
+	cout << "Data loaded: " << data.name << " (" << data.type << "), bks: " << data.bks << endl;
 
 	Timer timer;
 

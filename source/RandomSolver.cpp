@@ -14,7 +14,7 @@ bool RandomSolver::solve()
 	solution.nodes.push_back(0);
 
 	solution.evaluate();
-	cout << "RandomSolver: " << solution.cost << endl;
+	cout << "RandomSolver: " << solution << endl;
 
 	Solution current = solution;
 	for (int k = 0; k < 10'000'000; k++)
@@ -25,7 +25,7 @@ bool RandomSolver::solve()
 		if (current.cost < solution.cost || solution.nodes.empty())
 		{
 			solution = current;
-			cout << "Improved: " << solution.cost << endl;
+			cout << "Improved: " << solution << endl;
 		}
 	}
 

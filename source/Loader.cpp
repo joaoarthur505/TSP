@@ -31,6 +31,8 @@ bool Loader::load(const string& file_name)
 	buildEdges();
 	data.name = file_name.substr(file_name.find_last_of('/') + 1, file_name.find_last_of('.') - file_name.find_last_of('/') - 1);
 
+	readBKS();
+
     return true;
 }
 
@@ -90,5 +92,23 @@ void Loader::buildEdges()
 				}
 			}
 		}
+	}
+}
+
+void Loader::readBKS()
+{
+	ifstream fin_bks("data/bks.txt");
+	if (!fin_bks.is_open()) return;
+
+	while (true)
+	{
+		string str;
+		fin_bks >> str;
+		if (str == data.name)
+		{
+			fin_bks >> data.bks;
+			break;
+		}
+		else if (fin_bks.eof()) break;
 	}
 }
