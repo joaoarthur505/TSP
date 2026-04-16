@@ -13,7 +13,8 @@ using namespace std;
 int main()
 {
 	Loader loader;
-	loader.load("data/ulysses16.tsp");
+	if (!loader.load("data/ulysses16.tsp"))
+		throw runtime_error("Failed to load data");
 
 	const Data& data = Data::getInstance();
 	cout << "Data loaded: " << data.name << " (" << data.type << "), bks: " << data.bks << endl;

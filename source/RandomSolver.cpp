@@ -22,7 +22,7 @@ bool RandomSolver::solve()
 		Random::shuffle<int>(current.nodes.begin() + 1, current.nodes.end() - 1);
 		current.evaluate();
 
-		if (current.cost < solution.cost || solution.nodes.empty())
+		if (current.cost < solution.cost)
 		{
 			solution = current;
 			cout << "Improved: " << solution << endl;

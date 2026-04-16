@@ -72,6 +72,9 @@
     <ClInclude Include="source\Solver.h">
       <Filter>Header Files\algorithm</Filter>
     </ClInclude>
+    <ClInclude Include="source\GraspSolver.h">
+      <Filter>Header Files\algorithm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Main.cpp">
@@ -99,6 +102,9 @@
       <Filter>Source Files\output</Filter>
     </ClCompile>
     <ClCompile Include="source\NearestNeighborSolver.cpp">
+      <Filter>Source Files\algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GraspSolver.cpp">
       <Filter>Source Files\algorithm</Filter>
     </ClCompile>
   </ItemGroup>

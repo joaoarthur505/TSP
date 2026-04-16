@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Data.h" />
+    <ClInclude Include="source\GraspSolver.h" />
     <ClInclude Include="source\Loader.h" />
     <ClInclude Include="source\NearestNeighborSolver.h" />
     <ClInclude Include="source\Point.h" />
@@ -32,6 +33,7 @@
     <ClInclude Include="source\Timer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\GraspSolver.cpp" />
     <ClCompile Include="source\Loader.cpp" />
     <ClCompile Include="source\Main.cpp" />
     <ClCompile Include="source\NearestNeighborSolver.cpp" />

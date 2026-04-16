@@ -13,6 +13,7 @@ public:
 	{
 		Random,
 		NearestNeighbor,
+		GRASP,
 	};
 
 	virtual bool solve() = 0;
