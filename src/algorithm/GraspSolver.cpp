@@ -4,9 +4,9 @@
 #include <iostream>
 #include <algorithm>
 
-#include "../input/Data.h"
+#include "input/Data.h"
 
-#include "../util/Random.h"
+#include "util/Random.h"
 
 using namespace std;
  
@@ -25,43 +25,43 @@ bool GraspSolver::solve()
 	return true;
 }
 
-Solution GraspSolver::solveOne(bool deterministic)
+Solution GraspSolver::solveOne(const bool deterministic) const
 {
 	Solution current;
 	current.nodes.push_back(0);
 
-	vector<bool> visited(data.dimension, false);
+	vector<bool> visited(data.dimension);
 	visited[0] = true;
 
 	for (int _ = 1; _ < data.dimension; _++)
 	{
-		int last = current.nodes.back();
+		const int last = current.nodes.back();
 		vector<pair<double, int>> candidates;
 
 		double total = 0.0;
 		for (int j = 1; j < data.dimension; j++)
 			if (!visited[j])
 			{
-				candidates.push_back({ 1.0 / data.costs[last][j], j });
+				candidates.emplace_back(1.0 / data.costs[last][j], j);
 				total += 1.0 / data.costs[last][j];
 			}
 
-		for (auto& candidate : candidates)
-			candidate.first /= total;
+		for (auto&[value, _] : candidates)
+			value /= total;
 
-		sort(candidates.begin(), candidates.end(), greater<pair<double, int>>());
+		ranges::sort(candidates, greater());
 
 		int next = candidates.front().second;
 		if (!deterministic)
 		{
-			double r = Random::randomDouble();
-			double total = 0.0;
-			for (const auto& candidate : candidates)
+			const double r = Random::randomDouble();
+			double acc = 0.0;
+			for (const auto&[value, id] : candidates)
 			{
-				total += candidate.first;
-				if (r <= total)
+				acc += value;
+				if (r <= acc)
 				{
-					next = candidate.second;
+					next = id;
 					break;
 				}
 			}

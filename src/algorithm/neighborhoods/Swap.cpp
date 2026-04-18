@@ -2,19 +2,19 @@
 
 #include <iostream>
 
-#include "../../input/Data.h"
-#include "../../output/Solution.h"
+#include "input/Data.h"
+#include "output/Solution.h"
 
 using namespace std;
 
-bool Swap::evaluate(const Solution& solution, Args& args)
+bool Swap::evaluate(const Solution& solution, Args& args) const
 {
-    int prev1 = solution.nodes[args.pos1 - 1];
-    int curr1 = solution.nodes[args.pos1];
-    int next1 = solution.nodes[args.pos1 + 1];
-    int prev2 = solution.nodes[args.pos2 - 1];
-    int curr2 = solution.nodes[args.pos2];
-    int next2 = solution.nodes[args.pos2 + 1];
+    const int prev1 = solution.nodes[args.pos1 - 1];
+    const int curr1 = solution.nodes[args.pos1];
+    const int next1 = solution.nodes[args.pos1 + 1];
+    const int prev2 = solution.nodes[args.pos2 - 1];
+    const int curr2 = solution.nodes[args.pos2];
+    const int next2 = solution.nodes[args.pos2 + 1];
 
     args.profit = data.costs[prev1][curr1] + data.costs[curr1][next1] +
                   data.costs[prev2][curr2] + data.costs[curr2][next2] -

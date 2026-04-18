@@ -35,4 +35,6 @@ add_executable(tsp
         src/util/Timer.cpp
         src/util/Timer.h
         src/algorithm/VNDSolver.cpp
-        src/algorithm/VNDSolver.h)
+        src/algorithm/VNDSolver.h
+        src/input/Parameters.cpp
+        src/input/Parameters.h)

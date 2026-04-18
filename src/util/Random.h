@@ -29,8 +29,8 @@ public:
     }
 
     // Shuffles vector.
-    template<typename T>
-    static void shuffle(const std::vector<T>::iterator& begin, const std::vector<T>::iterator& end)
+    template<typename It>
+    static void shuffle(It begin, It end)
     {
         std::shuffle(begin, end, engine);
     }
@@ -39,14 +39,14 @@ public:
     template<typename T>
     static T& randomElem(std::vector<T>& vec)
     {
-        return vec[randomInt(0, (int)vec.size() - 1)];
+        return vec[randomInt(0, static_cast<int>(vec.size()) - 1)];
     }
 
     // Returns a random element from the vector.
     template<typename T>
     static const T& randomElem(const std::vector<T>& vec)
     {
-        return vec[randomInt(0, (int)vec.size() - 1)];
+        return vec[randomInt(0, static_cast<int>(vec.size()) - 1)];
     }
 
 private:

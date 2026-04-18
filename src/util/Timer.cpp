@@ -3,7 +3,7 @@
 using namespace std;
 using namespace std::chrono;
 
-Timer::Timer(bool started)
+Timer::Timer(const bool started)
 {
 	running = false;
 	if (started) start();
@@ -20,13 +20,13 @@ void Timer::start()
 double Timer::lap()
 {
 	if (!running) return numeric_limits<double>::infinity();
-	auto x = system_clock::now();
-	return (total = duration_cast<microseconds>(x - start_point).count() / 1'000'000.0);
+	const auto x = system_clock::now();
+	return total = duration_cast<microseconds>(x - start_point).count() / 1'000'000.0;
 }
 
 double Timer::stop()
 {
-	double temp = lap();
+	const double temp = lap();
 	running = false;
 	return temp;
 }

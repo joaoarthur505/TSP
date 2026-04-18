@@ -18,7 +18,7 @@ VNDSolver::VNDSolver()
 
 VNDSolver::~VNDSolver()
 {
-	for (Neighborhood* neighborhood : neighborhoods)
+	for (const Neighborhood* neighborhood : neighborhoods)
 		delete neighborhood;
 }
 
@@ -29,7 +29,7 @@ bool VNDSolver::solve()
 	return solve(nearest.solution);
 }
 
-bool VNDSolver::solve(Solution& initial)
+bool VNDSolver::solve(const Solution& initial)
 {
 	solution = initial;
 

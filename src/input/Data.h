@@ -1,21 +1,24 @@
 #pragma once
 
-#include "../util/Singleton.h"
+#include "util/Singleton.h"
 
 #include <string>
 #include <vector>
 
-#include "../util/Point.h"
+#include "util/Point.h"
 
 class Data : public Singleton<Data>
 {
-	friend class Singleton<Data>;
+	friend class Singleton;
 public:
+	Data(const Data&) = delete;
+	Data& operator=(const Data&) = delete;
+
 	std::string name;
 	std::string type;
-	int dimension;
+	int dimension = 0;
 
-	int bks;
+	int bks = 0;
 
 	std::vector<Point> coords;
 	std::vector<std::vector<int>> costs;
@@ -23,7 +26,4 @@ public:
 protected:
 	Data() = default;
 	~Data() = default;
-
-	Data(const Data&) = delete;
-	Data& operator=(const Data&) = delete;
 };

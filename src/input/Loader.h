@@ -4,16 +4,19 @@
 #include <fstream>
 
 class Data;
+class Parameters;
 
 class Loader
 {
 public:
 	Loader();
 
-	bool load(const std::string& file_name);
+	bool load();
 
 private:
 	Data& data;
+	const Parameters& params;
+
 	std::ifstream fin;
 
 	void readCoords();

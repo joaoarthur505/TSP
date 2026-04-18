@@ -5,13 +5,13 @@
 class Timer
 {
 public:
-	Timer(bool started = true);
+	explicit Timer(bool started = true);
 
 	void start();
 	double lap();
 	double stop();
 
-	double get() const { return total; }
+	[[nodiscard]] double get() const { return total; }
 
 private:
 	std::chrono::time_point<std::chrono::system_clock> start_point;

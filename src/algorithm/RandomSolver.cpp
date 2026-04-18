@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-#include "../input/Data.h"
-#include "../util/Random.h"
+#include "input/Data.h"
+#include "util/Random.h"
 
 using namespace std;
 
@@ -19,7 +19,7 @@ bool RandomSolver::solve()
 	Solution current = solution;
 	for (int k = 0; k < 10'000'000; k++)
 	{
-		Random::shuffle<int>(current.nodes.begin() + 1, current.nodes.end() - 1);
+		Random::shuffle(current.nodes.begin() + 1, current.nodes.end() - 1);
 		current.evaluate();
 
 		if (current.cost < solution.cost)

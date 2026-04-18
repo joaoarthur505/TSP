@@ -1,6 +1,7 @@
 #include <iostream>
 #include <format>
 
+#include "input/Parameters.h"
 #include "input/Loader.h"
 #include "input/Data.h"
 
@@ -10,21 +11,31 @@
 
 using namespace std;
 
-int main()
+int main(const int argc, const char * argv[])
 {
-	Loader loader;
-	if (!loader.load("data/eil101.tsp"))
-		throw runtime_error("Failed to load data");
+	try
+	{
+		Parameters& params = Parameters::getInstance();
+		if (!params.load(argc, argv)) return -1;
 
-	const Data& data = Data::getInstance();
-	cout << "Data loaded: " << data.name << " (" << data.type << "), bks: " << data.bks << endl;
+		Loader loader;
+		if (!loader.load())
+			throw runtime_error("Failed to load data");
 
-	Timer timer;
+		const Data& data = Data::getInstance();
+		cout << "Data loaded: " << data.name << " (" << data.type << "), bks: " << data.bks << endl;
 
-	Solver solver;
-	solver.solve();
+		Timer timer;
 
-	cout << format("Time: {:.6f}s", timer.stop()) << endl;
+		Solver solver;
+		solver.solve();
+
+		cout << format("Time: {:.6f}s", timer.stop()) << endl;
+	}
+	catch (exception& e)
+	{
+		cerr << e.what() << endl;
+	}
 
 	return 0;
 }

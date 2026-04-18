@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 
-#include "../input/Data.h"
+#include "input/Data.h"
 
 using namespace std;
 
@@ -16,7 +16,7 @@ bool NearestNeighborSolver::solve()
 
 	for (int _ = 1; _ < data.dimension; _++)
 	{
-		int last = solution.nodes.back();
+		const int last = solution.nodes.back();
 		int next = -1;
 		
 		for (int j = 1; j < data.dimension; j++)

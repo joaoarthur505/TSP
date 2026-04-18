@@ -8,5 +8,5 @@ public:
 
 	bool solve() override;
 
-	Solution solveOne(bool deterministic = false);
+	[[nodiscard]] Solution solveOne(bool deterministic = false) const;
 };

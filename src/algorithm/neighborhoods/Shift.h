@@ -9,7 +9,6 @@ class Shift : public Neighborhood
 public:
 	
 	bool localSearch(Solution& solution) override;
-	
 	bool randomMove(Solution& solution) override;
 
 private:
@@ -19,6 +18,6 @@ private:
 		int profit;
 	};
 
-	bool evaluate(const Solution& solution, Args& args);
-	void move(Solution& solution, const Args& args);
+	bool evaluate(const Solution& solution, Args& args) const;
+	static void move(Solution& solution, const Args& args);
 };

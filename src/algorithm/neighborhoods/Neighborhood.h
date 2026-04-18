@@ -7,6 +7,7 @@ class Neighborhood
 {
 public:
 	Neighborhood();
+	virtual ~Neighborhood() = default;
 
 	virtual bool localSearch(Solution& solution) = 0;
 

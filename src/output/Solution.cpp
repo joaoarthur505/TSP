@@ -2,7 +2,7 @@
 
 #include <format>
 
-#include "../input/Data.h"
+#include "input/Data.h"
 
 using namespace std;
 
@@ -18,6 +18,6 @@ void Solution::evaluate()
 ostream& operator<<(ostream& os, const Solution& solution)
 {
 	const Data& data = Data::getInstance();
-	os << format("{} ({:.2f}%)", solution.cost, (solution.cost - data.bks) / (double)data.bks * 100.0);
+	os << format("{} ({:.2f}%)", solution.cost, (solution.cost - data.bks) / static_cast<double>(data.bks) * 100.0);
 	return os;
 }

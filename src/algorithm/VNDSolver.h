@@ -8,10 +8,10 @@ class VNDSolver : public Solver
 {
 public:
 	VNDSolver();
-	~VNDSolver();
+	~VNDSolver() override;
 	
 	bool solve() override;
-	bool solve(Solution& initial);
+	bool solve(const Solution& initial);
 
 private:
 	std::vector<Neighborhood*> neighborhoods;

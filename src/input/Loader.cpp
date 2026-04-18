@@ -2,16 +2,19 @@
 
 #include <fstream>
 #include <cmath>
+#include <iostream>
 
 #include "Data.h"
+#include "Parameters.h"
 
 using namespace std;
 
-Loader::Loader() : data(Data::getInstance()) {}
+Loader::Loader() : data(Data::getInstance()), params(Parameters::getInstance()) {}
 
-bool Loader::load(const string& file_name)
+bool Loader::load()
 {
-	fin.open(file_name);
+	const string& fileName = params.inputFile;
+	fin.open(fileName);
 	if (!fin.is_open()) return false;
 
 	while (true)
@@ -30,7 +33,7 @@ bool Loader::load(const string& file_name)
 	}
 
 	buildEdges();
-	data.name = file_name.substr(file_name.find_last_of('/') + 1, file_name.find_last_of('.') - file_name.find_last_of('/') - 1);
+	data.name = fileName.substr(fileName.find_last_of('/') + 1, fileName.find_last_of('.') - fileName.find_last_of('/') - 1);
 
 	readBKS();
 
