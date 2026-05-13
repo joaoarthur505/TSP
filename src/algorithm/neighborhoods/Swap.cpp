@@ -4,6 +4,7 @@
 
 #include "input/Data.h"
 #include "output/Solution.h"
+#include "util/Random.h"
 
 using namespace std;
 
@@ -53,4 +54,13 @@ bool Swap::localSearch(Solution& solution)
     return any;
 }
 
-bool Swap::randomMove(Solution& solution) { return false; }
+bool Swap::randomMove(Solution& solution) {
+    int pos = Random::randomInt(1, data.dimension - 2);
+    int po2 = Random::randomInt(pos+1, data.dimension - 1);
+
+    Args args(pos, po2);
+    move(solution, args);
+
+    cout << "[RnSw] " << solution << endl;
+    return true;
+}

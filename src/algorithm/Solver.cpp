@@ -4,9 +4,10 @@
 
 #include "input/Parameters.h"
 
-#include "RandomSolver.h"
-#include "NearestNeighborSolver.h"
 #include "GraspSolver.h"
+#include "IteratedLocalSearchSolver.h"
+#include "NearestNeighborSolver.h"
+#include "RandomSolver.h"
 #include "VNDSolver.h"
 
 using namespace std;
@@ -16,9 +17,10 @@ bool Solver::solve()
 	AbstractSolver* solver = nullptr;
 	switch (params.solverType)
 	{
-	case Parameters::Random: solver = new RandomSolver(); break;
-	case Parameters::NearestNeighbor: solver = new NearestNeighborSolver(); break;
 	case Parameters::GRASP: solver = new GraspSolver(); break;
+	case Parameters::IteratedLocalSearch: solver = new IteratedLocalSearchSolver(); break;
+	case Parameters::NearestNeighbor: solver = new NearestNeighborSolver(); break;
+	case Parameters::Random: solver = new RandomSolver(); break;
 	case Parameters::VariableNeighborhoodDecent: solver = new VNDSolver(); break;
 	default: throw runtime_error("Unknown solver type");
 	}
