@@ -11,6 +11,7 @@
 #include "neighborhoods/Neighborhood.h"
 #include "neighborhoods/Shift.h"
 #include "neighborhoods/Swap.h"
+#include "neighborhoods/Twoopt.h"
 
 #include "NearestNeighborSolver.h"
 
@@ -22,7 +23,7 @@ IteratedLocalSearchSolver::IteratedLocalSearchSolver() {
         {
             case Parameters::Shift: neighborhoods.push_back(new Shift()); break;
             case Parameters::Swap: neighborhoods.push_back(new Swap()); break;
-            // case Parameter::Twoopt: neighborhoods.push_back(new Twoopt()); break;
+            case Parameters::Twoopt: neighborhoods.push_back(new Twoopt()); break;
             default: throw runtime_error("Unknown neighborhood type");
         }
     }
@@ -31,7 +32,7 @@ IteratedLocalSearchSolver::IteratedLocalSearchSolver() {
     {
         case Parameters::Shift: perturbation = new Shift(); break;
         case Parameters::Swap: perturbation = new Swap(); break;
-        // case Parameter::Twoopt: perturbation = new Twoopt(); break;
+        case Parameters::Twoopt: perturbation = new Twoopt(); break;
         default: throw runtime_error("Unknown perturbation type");
     }
 }

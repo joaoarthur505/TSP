@@ -28,12 +28,15 @@ public:
 
     std::string inputFile = "data/eil101.tsp";
     SolverType solverType = IteratedLocalSearch;
-    std::vector<NeighborhoodType> neighborhoodTypes = {Shift, Swap};
+
+    // ILS parameters:
+    std::vector<NeighborhoodType> neighborhoodTypes = {Twoopt};
     NeighborhoodType perturbationType = Swap;
-
-    bool bestStart = false; // Só faz sentido se Nearest Neighbor é usado em algum momento
-
     int numIterations = 100;
+
+    // NearestNeighbor Parameters
+    bool bestStart = true; // Só faz sentido se Nearest Neighbor é usado em algum momento
+
 private:
     static bool help(const std::string& msg = "");
 };
