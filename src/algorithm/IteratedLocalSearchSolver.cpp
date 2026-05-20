@@ -13,7 +13,7 @@
 #include "neighborhoods/Swap.h"
 #include "neighborhoods/Twoopt.h"
 
-#include "NearestNeighborSolver.h"
+#include "Solver.h"
 
 using namespace std;
 
@@ -67,7 +67,8 @@ bool IteratedLocalSearchSolver::solve(Solution& solution) {
 }
 
 bool IteratedLocalSearchSolver::solve() {
-    NearestNeighborSolver nearest;
-    nearest.solve();
-    return solve(nearest.solution);
+    Solver constructive;
+    constructive.solve(params.constructiveType);
+
+    return solve(constructive.solution);
 }

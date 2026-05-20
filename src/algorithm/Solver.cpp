@@ -1,5 +1,6 @@
 #include "Solver.h"
 
+#include <iostream>
 #include <stdexcept>
 
 #include "input/Parameters.h"
@@ -12,17 +13,16 @@
 
 using namespace std;
 
-bool Solver::solve()
-{
+bool Solver::solve(Parameters::SolverType type) {
 	AbstractSolver* solver = nullptr;
-	switch (params.solverType)
+	switch (type)
 	{
-	case Parameters::GRASP: solver = new GraspSolver(); break;
-	case Parameters::IteratedLocalSearch: solver = new IteratedLocalSearchSolver(); break;
-	case Parameters::NearestNeighbor: solver = new NearestNeighborSolver(); break;
-	case Parameters::Random: solver = new RandomSolver(); break;
-	case Parameters::VariableNeighborhoodDecent: solver = new VNDSolver(); break;
-	default: throw runtime_error("Unknown solver type");
+		case Parameters::GRASP: solver = new GraspSolver(); break;
+		case Parameters::IteratedLocalSearch: solver = new IteratedLocalSearchSolver(); break;
+		case Parameters::NearestNeighbor: solver = new NearestNeighborSolver(); break;
+		case Parameters::Random: solver = new RandomSolver(); break;
+		case Parameters::VariableNeighborhoodDecent: solver = new VNDSolver(); break;
+		default: throw runtime_error("Unknown solver type");
 	}
 
 	const bool ret = solver->solve();
@@ -30,4 +30,9 @@ bool Solver::solve()
 	delete solver;
 
 	return ret;
+}
+
+bool Solver::solve()
+{
+	return solve(params.solverType);
 }
