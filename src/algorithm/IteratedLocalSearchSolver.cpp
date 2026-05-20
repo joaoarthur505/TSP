@@ -12,6 +12,7 @@
 #include "neighborhoods/Shift.h"
 #include "neighborhoods/Swap.h"
 #include "neighborhoods/Twoopt.h"
+#include "neighborhoods/UniformNeighbor.h"
 
 #include "Solver.h"
 
@@ -33,6 +34,7 @@ IteratedLocalSearchSolver::IteratedLocalSearchSolver() {
         case Parameters::Shift: perturbation = new Shift(); break;
         case Parameters::Swap: perturbation = new Swap(); break;
         case Parameters::Twoopt: perturbation = new Twoopt(); break;
+        case Parameters::UniformNeighbor: perturbation = new UniformNeighbor(); break;
         default: throw runtime_error("Unknown perturbation type");
     }
 }

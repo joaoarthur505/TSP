@@ -1,6 +1,7 @@
 #pragma once
 
 class Data;
+class Parameters;
 class Solution;
 
 class Neighborhood
@@ -15,4 +16,5 @@ public:
 
 protected:
 	const Data& data;
+	const Parameters& params;
 };

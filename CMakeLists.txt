@@ -41,4 +41,6 @@ add_executable(tsp
         src/algorithm/IteratedLocalSearchSolver.cpp
         src/algorithm/IteratedLocalSearchSolver.h
         src/algorithm/neighborhoods/Twoopt.cpp
-        src/algorithm/neighborhoods/Twoopt.h)
+        src/algorithm/neighborhoods/Twoopt.h
+        src/algorithm/neighborhoods/UniformNeighbor.cpp
+        src/algorithm/neighborhoods/UniformNeighbor.h)

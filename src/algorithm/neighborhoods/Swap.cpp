@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "input/Data.h"
+#include "input/Parameters.h"
 #include "output/Solution.h"
 #include "util/Random.h"
 
@@ -55,6 +56,7 @@ bool Swap::localSearch(Solution& solution)
 }
 
 bool Swap::randomMove(Solution& solution) {
+    // Random::seed(params.seed);
     int pos = Random::randomInt(1, data.dimension - 2);
     int po2 = Random::randomInt(pos+1, data.dimension - 1);
 
